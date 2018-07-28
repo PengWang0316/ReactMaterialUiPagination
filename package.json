@@ -1,0 +1,43 @@
+{
+  "name": "@kevin/react-materialui-pagination",
+  "version": "1.0.0",
+  "author": "Kevin W. <rocwang0316@gmail.com>",
+  "license": "MIT",
+  "description": "The react component with Material-UI style for pagination.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "build": "babel src --out-dir distribution",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PengWang0316/ReactMaterialUiPagination.git"
+  },
+  "keywords": [
+    "React",
+    "Material-UI",
+    "Pagination"
+  ],
+  "bugs": {
+    "url": "https://github.com/PengWang0316/ReactMaterialUiPagination/issues"
+  },
+  "homepage": "https://github.com/PengWang0316/ReactMaterialUiPagination#readme",
+  "dependencies": {
+    "@material-ui/core": "^1.4.1",
+    "react": "^16.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.2",
+    "babel-preset-env": "^1.7.0",
+    "coveralls": "^3.0.2",
+    "eslint": "^5.2.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0",
+    "jest": "^23.4.2"
+  }
+}
