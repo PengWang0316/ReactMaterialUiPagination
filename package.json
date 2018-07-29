@@ -4,7 +4,7 @@
   "author": "Kevin W. <rocwang0316@gmail.com>",
   "license": "MIT",
   "description": "A pagination component for React and Material-UI (version > 1.0.0).",
-  "main": "./distribution/index.js",
+  "main": "./distribution/Pagination.js",
   "scripts": {
     "test": "jest --coverage",
     "build": "babel src --out-dir distribution",
