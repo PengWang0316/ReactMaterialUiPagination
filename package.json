@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "author": "Kevin W. <rocwang0316@gmail.com>",
   "license": "MIT",
-  "description": "The react component with Material-UI style for pagination.",
+  "description": "A pagination component for React and Material-UI (version > 1.0.0).",
   "main": "./distribution/index.js",
   "scripts": {
     "test": "jest --coverage",
@@ -17,7 +17,12 @@
   "keywords": [
     "React",
     "Material-UI",
-    "Pagination"
+    "Pagination",
+    "react-component",
+    "material-ui",
+    "material design",
+    "material ui component",
+    "material ui pagination"
   ],
   "bugs": {
     "url": "https://github.com/PengWang0316/ReactMaterialUiPagination/issues"
