@@ -1,6 +1,6 @@
 {
   "name": "@kevinwang0316/react-materialui-pagination",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "Kevin W. <rocwang0316@gmail.com>",
   "license": "MIT",
   "description": "A pagination component for React and Material-UI (version > 1.0.0).",
