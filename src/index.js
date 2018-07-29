@@ -73,14 +73,38 @@ export class Pagination extends Component {
   static getButton = (className, onClick, number) => <Button classes={{ root: className }} onClick={onClick} key={number} color="primary">{number}</Button>;
 
   /**
+   * Returning a Button component.
+   * @param {boolean} isDisable is an indicator of whether this is the first page.
+   * @param {string} text is the content will be showed in the button.
+   * @param {function} onClick is the function will be called when a user clicks the button.
+   * @param {string} className is the class name for the component.
+   * @return {Object} Button is a Material-UI Button component.
+   */
+  static getArrowButton = (isDisable, text, onClick, className) =>
+    <Button disabled={isDisable} color="primary" onClick={onClick} className={className} key={text}>{text}</Button>;
+
+  /**
+   * Calling the handlePageChange function with a increased page number.
+   * @return {null} No return.
+   */
+  handleForwardClick = () => this.handlePageChange(this.currentPage + 1);
+
+  /**
+   * Calling the handlePageChange function with a decreased page number.
+   * @return {null} No return.
+   */
+  handleBackwardClick = () => this.handlePageChange(this.currentPage - 1);
+
+  /**
    * Assebling all page number button based on total page number and current page number.
    * @param {number} currentPage is the current page number.
    * @return {array} Return a buttons element array.
    */
   assembleAllButtons(currentPage) {
-    const buttons = [];
+    const buttons = [Pagination.getArrowButton(currentPage === 1, '<', this.handleBackwardClick, this.props.classes.button)]; // Added the forward button to the array.
     for (let i = 0; i < this.totalPageNumber; i++)
       buttons.push(Pagination.getButton(i + 1 === currentPage ? this.props.classes.focusBtn : this.props.classes.button, this.handleClick, i + 1));
+    buttons.push(Pagination.getArrowButton(currentPage === this.totalPageNumber, '>', this.handleForwardClick, this.props.classes.button));
     return buttons;
   }
 
@@ -135,8 +159,27 @@ export class Pagination extends Component {
     if (rightButtons[0] && (middleButtons[middleButtons.length - 1].key * 1) + 1 !== rightButtons[0].key * 1)
       middleButtons.push(<Typography color="textSecondary" key="rightEllipsis">...</Typography>);
 
+    // Adding the forward and backward buttons.
+    leftButtons.unshift(Pagination.getArrowButton(currentPage === 1, '<', this.handleBackwardClick, this.props.classes.button));
+    rightButtons.push(Pagination.getArrowButton(currentPage === this.totalPageNumber, '>', this.handleForwardClick, this.props.classes.button));
+
     return [...leftButtons, ...middleButtons, ...rightButtons];
   }
+
+  /**
+   * Setting the current page to the new number, reassembling the buttons and call the onClick function with the new offset.
+   * @param {number} pageNumber is the page number a user wants to go.
+   * @return {null} No return.
+   */
+  handlePageChange = pageNumber => {
+    if (pageNumber !== this.currentPage) { // Just run the code when a different page number was clicked.
+      this.currentPage = pageNumber;
+      if (!this.isShowAllNumber) // If the page number more than showing number, the buttons need to be recalculated
+        this.setState({ buttons: this.assembleButtons(this.currentPage) });
+      else this.setState({ buttons: this.assembleAllButtons(this.currentPage) }); // If the page number does not more than showing number, assembling all page number button.
+      this.props.onClick((this.currentPage - 1) * this.props.limit); // Sending back the offset number.
+    }
+  };
 
   /**
    * When a user clicks a button, set currentPage state and recalculate the button element if necessary.
@@ -147,13 +190,7 @@ export class Pagination extends Component {
     event.preventDefault(); // Stopping event bubbling
     // If the target has two child nodes, it is the button. If it has one child node, it is the span element.
     const pageNumber = event.target.childNodes.length === 2 ? event.target.childNodes[0].innerText : event.target.innerText;
-    if (pageNumber * 1 !== this.currentPage) { // Just run the code when a different page number was clicked.
-      this.currentPage = pageNumber * 1;
-      if (!this.isShowAllNumber) // If the page number more than showing number, the buttons need to be recalculated
-        this.setState({ buttons: this.assembleButtons(this.currentPage) });
-      else this.setState({ buttons: this.assembleAllButtons(this.currentPage) }); // If the page number does not more than showing number, assembling all page number button.
-      this.props.onClick((this.currentPage - 1) * this.props.limit); // Sending back the offset number.
-    }
+    this.handlePageChange(pageNumber * 1);
   };
 
   /**
