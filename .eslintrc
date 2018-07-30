@@ -18,9 +18,8 @@
     "react/jsx-indent": [2, 2],
     "curly": 0,
     "import/no-named-as-default": 0,
-    "no-cond-assign": 0,
-    # "array-callback-return": "warn",
-    # "consistent-return": ["warn", { "treatUndefinedAsUnspecified": true }],
+    "array-callback-return": "warn",
+    "consistent-return": ["warn", { "treatUndefinedAsUnspecified": true }],
     "max-len": ["warn", 100, {
       "ignoreComments": true,
       "ignoreTrailingComments": true,
@@ -29,6 +28,7 @@
       "ignoreTemplateLiterals": true,
       "ignoreRegExpLiterals": true,
     }],
+    "nonblock-statement-body-position": 0,
     "react/forbid-prop-types": [true, { "forbid": ['any'], checkContextTypes: false, checkChildContextTypes: false }],
     "jsx-a11y/label-has-for": [ 2, {
             "components": [ "Label" ],
