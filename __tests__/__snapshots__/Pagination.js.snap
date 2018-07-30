@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination snapshot 1`] = `
+<div
+  className="root"
+>
+  <Button
+    className="button"
+    color="primary"
+    disabled={true}
+    onClick={[Function]}
+  >
+    &lt;
+  </Button>
+  <Button
+    classes={
+      Object {
+        "root": "focusBtn",
+      }
+    }
+    color="primary"
+    onClick={[Function]}
+  >
+    1
+  </Button>
+  <Button
+    classes={
+      Object {
+        "root": "button",
+      }
+    }
+    color="primary"
+    onClick={[Function]}
+  >
+    2
+  </Button>
+  <Button
+    classes={
+      Object {
+        "root": "button",
+      }
+    }
+    color="primary"
+    onClick={[Function]}
+  >
+    3
+  </Button>
+  <Button
+    classes={
+      Object {
+        "root": "button",
+      }
+    }
+    color="primary"
+    onClick={[Function]}
+  >
+    4
+  </Button>
+  <Button
+    classes={
+      Object {
+        "root": "button",
+      }
+    }
+    color="primary"
+    onClick={[Function]}
+  >
+    5
+  </Button>
+  <Button
+    classes={
+      Object {
+        "root": "button",
+      }
+    }
+    color="primary"
+    onClick={[Function]}
+  >
+    6
+  </Button>
+  <Button
+    classes={
+      Object {
+        "root": "button",
+      }
+    }
+    color="primary"
+    onClick={[Function]}
+  >
+    7
+  </Button>
+  <p
+    className="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-colorTextSecondary-24"
+  >
+    ...
+  </p>
+  <Button
+    classes={
+      Object {
+        "root": "button",
+      }
+    }
+    color="primary"
+    onClick={[Function]}
+  >
+    16
+  </Button>
+  <Button
+    classes={
+      Object {
+        "root": "button",
+      }
+    }
+    color="primary"
+    onClick={[Function]}
+  >
+    17
+  </Button>
+  <Button
+    className="button"
+    color="primary"
+    disabled={false}
+    onClick={[Function]}
+  >
+    &gt;
+  </Button>
+</div>
+`;
