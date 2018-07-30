@@ -5,6 +5,8 @@ A simple react component with Material-UI for pagination
 [![Build Status](https://travis-ci.org/PengWang0316/ReactMaterialUiPagination.svg?branch=master)](https://travis-ci.org/PengWang0316/ReactMaterialUiPagination)
 [![Coverage Status](https://coveralls.io/repos/github/PengWang0316/ReactMaterialUiPagination/badge.svg?branch=master)](https://coveralls.io/github/PengWang0316/ReactMaterialUiPagination?branch=master)
 
+![](http://res.cloudinary.com/orderstaker/image/upload/c_scale,q_auto:good,w_380/v1532933078/others/20180729_234108.gif)
+
 # Installing
 
 ```
